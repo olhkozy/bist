@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Typy Osobowości</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+        .wynik {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+        }
+        .krok {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="krok">
+        <h2>Krok 1: Wykonaj test osobowości</h2>
+        <p><a href="https://www.openlife.pl/preferencje-ubezpieczeniowe-polakow/test-osobowosciowy/" target="_blank">
+            Kliknij tutaj, aby dowiedzieć się jaki masz typ osobowości
+        </a></p>
+    </div>
+
+    <div class="krok">
+        <h2>Krok 2: Sprawdź swój typ osobowości</h2>
+        <button onclick="pokazOpis()">Sprawdź</button>
+    </div>
+
+    <div class="wynik" id="opis"></div>
+
+    <script>
+        function pokazOpis() {
+            const slowo = prompt("Podaj już znany typ osobowości:");
+
+            if (!slowo) return;
+
+            const wpis = slowo.trim().toLowerCase();
+            let tytul = "";
+            let opis = "";
+
+            if (wpis === "sangwinik") {
+                tytul = "Sangwinik";
+                opis = "Osoba, lubiąca przebywać w towarzystwie innych osób. Mają pozytywne nastawieni do świata i innych ludzi. Lubią być w centrum uwagi.";
+            } else if (wpis === "flegmatyk") {
+                tytul = "Flegmatyk";
+                opis = "Osoba spokojna, cierpliwa i zrównoważona. Lubią rutynę i niechętnie odnoszą się do zmian w ich życiu. Są bardzo cierpliwi, więc są także dobrymi słuchaczami.";
+            } else if (wpis === "choleryk") {
+                tytul = "Choleryk";
+                opis = "Są urodzonymi przywódcami, więc często obejmują stanowiska liderów. Ich priorytet życiowy to realizacja swoich celów, a więc muszą mieć wszystko pod kontrolą.";
+            } else if (wpis === "melancholik") {
+                tytul = "Melancholik";
+                opis = "Takie osoby są przeciwieństwem choleryków, określane są jako pesymiści i introwertycy. Są skłonni do nadmiernych rozmyślań i analizy. Często narzekają.";
+            } else {
+                document.getElementById("opis").innerHTML = `<p style="color:red;">Nie znaleziono opisu dla: "${wpis}"</p>`;
+                return;
+            }
+
+            document.getElementById("opis").innerHTML = `<h3>${tytul}</h3><p>${opis}</p>`;
+        }
+    </script>
+
+</body>
+</html>

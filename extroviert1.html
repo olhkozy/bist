@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-
+    <h1>Na tej stronie masz króciutki teścik, który musisz przejść by dowiedzieć się o sobie czegoś nowego :) </h1>
     <div class="krok">
         <h2>Krok 1: Wykonaj test osobowości</h2>
         <p><a href="https://www.openlife.pl/preferencje-ubezpieczeniowe-polakow/test-osobowosciowy/" target="_blank">
@@ -30,8 +30,8 @@
     </div>
 
     <div class="krok">
-        <h2>Krok 2: Sprawdź swój typ osobowości</h2>
-        <button onclick="pokazOpis()">Sprawdź</button>
+        <h2>Krok 2: Dowiedz się o swoim typie osobowości</h2>
+        <button onclick="pokazOpis()">Dowiedz się więcej</button>
     </div>
 
     <div class="wynik" id="opis"></div>
@@ -48,16 +48,16 @@
 
             if (wpis === "sangwinik") {
                 tytul = "Sangwinik";
-                opis = "Osoba, lubiąca przebywać w towarzystwie innych osób. Mają pozytywne nastawieni do świata i innych ludzi. Lubią być w centrum uwagi.";
+                opis = "To osoby lubiące przebywać w towarzystwie innych oraz szybko nawiązujące nowe znajomości. Są ambitne, energiczne i pozytywnie nastawione do świata oraz innych ludzi, dlatego lubią być w centrum uwagi.<br>W pracy lub zespole zawsze okazują zainteresowanie i wykazują inicjatywę. Jednak gdy zadania okazują się zbyt nudne lub trudne, łatwo się zniechęcają.<br>Sangwinicy starają się unikać konfliktów, ponieważ ich nie lubią. W trudnych sytuacjach zazwyczaj szybko podejmują decyzje. ";
             } else if (wpis === "flegmatyk") {
                 tytul = "Flegmatyk";
-                opis = "Osoba spokojna, cierpliwa i zrównoważona. Lubią rutynę i niechętnie odnoszą się do zmian w ich życiu. Są bardzo cierpliwi, więc są także dobrymi słuchaczami.";
+                opis = "Spokojni, zdyscyplinowani i opanowani introwertycy. Trudno im zmieniać swoje nawyki i przełączać uwagę z jednej czynności na inną. Mimo to flegmatycy są dobrymi pracownikami, ponieważ: <li>są pracowici</li> <li>cierpliwi</li> <li>oszczędzają siły oraz emocje</li><br> W relacjach z bliskimi również mogą zachowywać się chłodno, ale są znani jako wierni i godni zaufania partnerzy.";
             } else if (wpis === "choleryk") {
                 tytul = "Choleryk";
-                opis = "Są urodzonymi przywódcami, więc często obejmują stanowiska liderów. Ich priorytet życiowy to realizacja swoich celów, a więc muszą mieć wszystko pod kontrolą.";
+                opis = "To są prawdziwi przywódcy, więc często obejmują stanowiska liderów. Ich priorytet życiowy to realizacja swoich celów, a więc muszą mieć wszystko zawsze pod kontrolą.<br> Ich dominująca natura może często doprowadzać do konfliktów, zwłaszcza jeśli napotkają opór lub brak działania ze strony innych.<br>Czasami brakuje im cierpliwości, ale ich silna wola często pozwala osiągać świetne rezultaty — szczególnie w rolach przywódczych.";
             } else if (wpis === "melancholik") {
                 tytul = "Melancholik";
-                opis = "Takie osoby są przeciwieństwem choleryków, określane są jako pesymiści i introwertycy. Są skłonni do nadmiernych rozmyślań i analizy. Często narzekają.";
+                opis = "To są osoby spokojne i wrażliwe. Łatwo się zniechęcają, często z powodu sytuacji, które nie są warte uwagi, a po niepowodzeniach długo dochodzą do siebie.<br> Melancholik nie spieszy się i nie wykazuje inicjatywy w pracy, a odpoczynek woli spędzać spokojnie i w samotności.Jednak ma swoje mocne strony, takie jak: <li>umiejętność współczucia</li> <li>refleksyjność</li>  <li>spostrzegawczość</li><br> Uważa się również, że to właśnie wśród melancholików znajduje się najwięcej artystów.";
             } else {
                 document.getElementById("opis").innerHTML = `<p style="color:red;">Nie znaleziono opisu dla: "${wpis}"</p>`;
                 return;

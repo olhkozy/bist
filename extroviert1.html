@@ -1,42 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Typy Osobowości</title>
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            padding: 20px;
-        }
-        .wynik {
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #f0f0f0;
-        }
-        .krok {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="extrovertiert2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body>
-    <h1>Na tej stronie masz króciutki teścik, który musisz przejść by dowiedzieć się o sobie czegoś nowego :) </h1>
-    <div class="krok">
-        <h2>Krok 1: Wykonaj test osobowości</h2>
-        <p><a href="https://www.openlife.pl/preferencje-ubezpieczeniowe-polakow/test-osobowosciowy/" target="_blank">
-            Kliknij tutaj, aby dowiedzieć się jaki masz typ osobowości
-        </a></p>
-    </div>
+<body onload="ukryjOpis()">
+    <header>
+        <a href="#" class="logo">extrovertiert<span>.</span></a>
+    </header>
 
-    <div class="krok">
-        <h2>Krok 2: Dowiedz się o swoim typie osobowości</h2>
-        <button onclick="pokazOpis()">Dowiedz się więcej</button>
-    </div>
+    <section class="intro">
+        <div class="krok">
+            <h1>Na tej stronie masz króciutki teścik, który musisz przejść by dowiedzieć się o sobie czegoś nowego :) </h1>
+            <h2>Krok 1: Wykonaj test osobowości</h2>
+            <p><a href="https://www.openlife.pl/preferencje-ubezpieczeniowe-polakow/test-osobowosciowy/" target="_blank">
+                Kliknij tutaj, aby dowiedzieć się jaki masz typ osobowości
+            </a></p>
+        </div>
+    
+        <div class="krok1">
+            <h2>Krok 2: Dowiedz się o swoim typie osobowości</h2>
+            <button onclick="pokazOpis()">Dowiedz się więcej</button>
+        </div>
+    
+        <div class="wynik" id="opis"></div>
+    </section>
 
-    <div class="wynik" id="opis"></div>
+    <script>            
+        let element = document.getElementById("opis");
 
-    <script>
+        function ukryjOpis() {
+            element.style.display = "none";
+        }
+
         function pokazOpis() {
             const slowo = prompt("Podaj już znany Ci typ osobowości:");
 
@@ -59,13 +58,14 @@
                 tytul = "Melancholik";
                 opis = "To są osoby spokojne i wrażliwe. Łatwo się zniechęcają, często z powodu sytuacji, które nie są warte uwagi, a po niepowodzeniach długo dochodzą do siebie.<br> Melancholik nie spieszy się i nie wykazuje inicjatywy w pracy, a odpoczynek woli spędzać spokojnie i w samotności.Jednak ma swoje mocne strony, takie jak: <li>umiejętność współczucia</li> <li>refleksyjność</li>  <li>spostrzegawczość</li><br> Uważa się również, że to właśnie wśród melancholików znajduje się najwięcej artystów.";
             } else {
-                document.getElementById("opis").innerHTML = `<p style="color:red;">Nie znaleziono opisu dla: "${wpis}"</p>`;
+                element.innerHTML = `<p style="color:red;">Nie znaleziono opisu dla: "${wpis}"</p>`;
                 return;
             }
-
-            document.getElementById("opis").innerHTML = `<h3>${tytul}</h3><p>${opis}</p>`;
+            element.style.display = "block";
+            element.innerHTML = `<h3>${tytul}</h3><p>${opis}</p>`;
         }
     </script>
+    </section>
 
 </body>
 </html>
